@@ -1,2 +1,2 @@
-# GustaSchmidt-
+# GustaSchmidt
 Meu Portifolio / Site pessoal
