@@ -1,0 +1,210 @@
+@import url("./master.css");
+
+body{
+    margin-top: var(--tamanho-header);
+    background-color: var(--background);
+}
+
+header {
+	display: flex;
+	position: fixed;
+    top: 0;
+    align-items: center;
+	background-color: var(--background);
+	width: 100%;
+	height: var(--tamanho-header);	
+}
+header #home-link{
+    float: left;
+    color: var(--texto-padrao);
+    text-decoration: none;
+    vertical-align: middle;
+    height: 100%;
+}
+header #menu{
+    float: right;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 20px;
+}
+header #menu li{
+    list-style: none;
+    display: inline-flex;
+}
+header #menu li *{
+    color: var(--texto-padrao);
+}
+
+/* HERO */
+
+#home-hero .container {
+	display: grid;
+	grid-template-columns: 1fr 1.1fr;
+}
+#home-hero #text{
+    margin-top: 35%;
+    color: var(--texto-padrao);
+}
+#home-hero #text h2{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--branco);
+}
+#home-hero #text h1{
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: .05rem;
+    background-image: var(--degrade-horizontal);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#home-hero #text p{
+    margin-top: 5px;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+#home-hero #img img{
+    text-align: right;
+}
+#home-hero button#contato{
+    margin-top: 20px;
+    font-size: 1.05rem;
+    color: var(--texto-variante);
+}
+
+/* SOBRE */
+#sobre{
+    margin-top: 150px;
+    margin-bottom: 100px;
+    --margem: 15px;
+}
+
+#sobre h2{
+    margin-left: var(--margem);
+}
+#sobre p{
+	padding: 6px 0 6px var(--margem);
+	margin-top: 7px;
+	color: var(--texto-padrao);
+	border-width: 4px;
+	border-style: solid;
+	border-image: var(--degrade-vertical);
+	border-image-slice: 0 0 0 10;
+}
+
+/* PROJETOS */
+#projetos{
+    margin: 110px 0;
+}
+#projetos #project-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    
+    padding: 30px 0;
+}
+#projetos #project-list li{
+    list-style: none;
+    background-color: var(--cinza);
+    color: var(--texto-padrao);
+}
+#projetos #project-list li .conteiner-desc{
+    margin: 12px;
+}
+#projetos #project-list li img{
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+#projetos #project-list li h3{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin: 2px 0;
+    font-weight: 600;
+    color:var(--branco);
+}
+#projetos #project-list li .project-tags{
+    display: inline-flex;
+    gap: 10px;
+    margin: 10px 0 15px 0;
+}
+#projetos #project-list li .project-tags span{
+    background: var(--degrade-horizontal);
+    color: var(--texto-variante);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+#projetos #project-list li p{
+    font-size: 1rem;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+#projetos button {
+	font-size: 1.2rem;
+	text-align: center;
+	margin: 30px 0;
+	font-weight: normal;
+	padding: 1% 2%;
+	display: block;
+	margin: 0 auto;
+}
+
+/* STACK */
+#stack{
+	margin: 10% 0;
+}
+#stack h2{
+    margin: 20px 0;
+}
+#stack #stack-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	column-gap: 6%;
+	row-gap: 18%;
+}
+#stack #stack-list li{
+    list-style: none;
+}
+#stack #stack-list li img{
+    width: 100%;
+    height: 100%;
+}
+#stack #stack-list li h4{
+    color: var(--texto-padrao);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* FOOTER */
+/* footer ul{
+    display: inline;
+} */
+footer {
+	padding: 10% 0 2% 0;
+}
+footer ul li{
+	margin: 0 auto;
+	width: fit-content;
+}
+footer span {
+	color: var(--texto-padrao);
+	margin: 0 auto;
+	width: max-content;
+	display: block;
+	padding-top: 20px;
+}
+footer ul#contact-footer{
+	width: fit-content;
+	margin: 0 auto;
+}
+footer ul#contact-footer li{
+    display: inline-flex;
+    margin: 0 16px;
+}
+footer ul#contact-footer li h2{
+    font-size: 1rem;
+}
