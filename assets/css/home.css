@@ -155,6 +155,9 @@ header #menu li *{
 	display: block;
 	margin: 0 auto;
 }
+#projetos button:hover{
+    cursor: pointer;
+}
 
 /* STACK */
 #stack{
