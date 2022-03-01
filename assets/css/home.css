@@ -141,6 +141,9 @@ header #menu li *{
     border-radius: 5px;
     padding: 5px 10px;
 }
+#projetos #project-list li .project-tags span:hover{
+    cursor: default;
+}
 #projetos #project-list li p{
     font-size: 1rem;
     font-weight: lighter;
@@ -154,10 +157,7 @@ header #menu li *{
 	padding: 1% 2%;
 	display: block;
 	margin: 0 auto;
-}
-#projetos button:hover{
-    cursor: pointer;
-}
+} 
 
 /* STACK */
 #stack{
