@@ -80,10 +80,8 @@ header #menu li *{
     margin-bottom: 100px;
     --margem: 15px;
 }
-
 #sobre h2{
-    margin-left: var(--margem);
-    margin-bottom: 15px;
+    margin-bottom: var(--margem);
 }
 #sobre p {
 	padding: 6px 0 6px var(--margem);
