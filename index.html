@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    
 </head>
 <body>
     <header>
@@ -24,10 +25,10 @@
         
             <ul id="menu">
                 <li>
-                    <a href="">Projetos</a>
+                    <a href="" id="projetos-link">Projetos</a>
                 </li>
                 <li>
-                    <a href="">Contato</a>
+                    <a href="" id="contato-link">Contato</a>
                 </li>
             </ul>
         </div>    
@@ -36,14 +37,14 @@
     <section id="home-hero">
         <div class="container">
             <div id="text">
-                <h2>AppSec Analyst</h2>
-                <h1>Gustavo Schmidt</h1>
-                <p>
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                    Velit officia consequat duis enim velit mollit. 
-                    Exercitation veniam consequat sunt.
+                <h2 id="titulo">AppSec Analyst</h2>
+                <h1 id="nome">Gustavo Schmidt</h1>
+                <p id="desc">
+                    Desenvolvedor de software focado em segurança, tratando de assuntos como,
+                    codigo seguro, mapeamento de dados e adequação legal de sistamas,
+                    estudando atualmente na PUCPR.                    
                 </p>
-                <button class="buttom-primary" id="contato">Contato</button>
+                <button class="buttom-primary" id="contato-bt">Contato</button>
             </div>
     
             <div id="img">
@@ -54,20 +55,26 @@
 
     <section id="sobre">
         <div class="container">
-            <h2>Sobre</h2>
-            <p>
-                The long barrow was built on land previously inhabited in the Mesolithic period. 
-                It consisted of a sub-rectangular earthen tumulus, estimated to have been 15 metres 
-                (50 feet) in length, with a chamber built from sarsen megaliths on its eastern end. 
-                Both inhumed and cremated human remains were placed within this chamber during the 
-                Neolithic period, representing at least nine or ten individuals.
-            </p>
+            <h2 id="titulo">Sobre</h2>
+            <div id="texto">
+                <p>
+                    Desde de pequeno gosto de tecnologia e fuçar as coisas, meu primeiro contato com computadores foi
+                    por volta dos meus 8 anos de idade, e o primeiro com programação com 12 anos, este com java, sem saber absolutamente nada
+                    tentando rodar servidores de minecraft.
+                </p>
+                <p>
+                    Passei por algumas diferentes experiencias com computação durante o ensino medio, participando das equipes de 
+                    robotica, iniciação cientifica, e outros projetos desenvolvidos durante esse periodo, nesse periodo me aproximei mais da 
+                    área se segurança, de desde então venho desenvolvendo projetos propios e me mergulhando em cibersegurança, 
+                    sem abandonar minha paixão por desenvolvimento de software.
+                </p>
+            </div>
         </div>
     </section>
 
     <section id="projetos">
         <div class="container">
-            <h2>Projetos</h2>
+            <h2 id="titulo">Projetos</h2>
 
             <ul id="project-list">
                 <li>
@@ -132,13 +139,13 @@
                 </li>
             </ul>
 
-            <button class="buttom-primary">VEJA OUTROS PROJETOS</button>
+            <button class="buttom-primary" id="vermais-bt">VEJA OUTROS PROJETOS</button>
         </div>
     </section>
 
     <section id="stack">
         <div class="container">
-            <h2>Tecnologias favoritas</h2>
+            <h2 id="titulo">Tecnologias favoritas</h2>
             <ul id="stack-list">
                 <li>
                     <img src="https://raw.githubusercontent.com/uiwjs/file-icons/master/icon/php.svg" alt="">
@@ -207,7 +214,7 @@
             </li>
         </ul>
 
-        <span>Atualizado em janeiro de 20022</span>
+        <span id="update-msg">Atualizado em janeiro de 20022</span>
     </footer>
 </body>
 </html>
