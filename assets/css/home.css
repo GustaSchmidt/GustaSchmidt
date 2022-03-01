@@ -189,7 +189,17 @@ header #menu li *{
     display: inline;
 } */
 footer {
-	padding: 220px 0 2% 0;
+	padding: 150px 0 2% 0;
+}
+footer #me-avatar {
+    display: none;
+    margin: 15px auto;    
+	width: 120px;
+    border: double 4px transparent;
+    border-radius: 80px;
+    background-image: linear-gradient(white, white), var(--degrade-horizontal);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 footer ul li {
 	width: fit-content;
