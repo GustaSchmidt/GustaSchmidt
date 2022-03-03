@@ -16,6 +16,43 @@ var configs = {
 
 };
 
+function loadProjects(){
+    var modelHTML = `
+        <li>
+            <img src="./assets/captura_de_tela.png" alt="">
+            <div class="conteiner-desc">
+                <h3>Titulo do projeto</h3>
+                <div class="project-tags">  
+                    <span>Lang</span>
+                </div>
+                <p class="desc">
+                    Lorem Ipsum
+                </p>
+            </div>
+        </li>
+    `;
+    for (let index = 0; index < configs.projetos.length; index++) {
+        const project = configs.projetos[index];
+        
+        //Verifica se foi passado usuario na url do git
+        var projectURL = project.github.split(/\//);
+        if(projectURL.length == 2){
+            projectURL = project.github;
+        }else{
+            projectURL = configs.github_user+'/'+project.github;
+        }
+        //Request API github
+        var repoRequest = getAPI("https://api.github.com/repos/"+projectURL).then(function(repoResponse){
+            console.log(valor);
+            repo = valor;
+        });
+        
+    }
+}
+async function getAPI(URL) {
+    const response = await fetch(URL, {method: 'GET'})
+    return await response.json();
+}
 document.addEventListener("DOMContentLoaded", function(event) {
     // Definindo links do footer
     var emailLink = document.querySelector("#mail-link");
