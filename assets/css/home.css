@@ -118,9 +118,6 @@ header #menu li *{
     gap: 1.2rem;
     padding: 30px 0;
 }
-#projetos #project-list{
-    /* display: none; */
-}
 #projetos #project-list li{
     list-style: none;
     background-color: var(--cinza);
@@ -184,8 +181,8 @@ header #menu li *{
 #stack #stack-list {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	column-gap: 6%;
-	row-gap: 18%;
+	column-gap: 5vw;
+	row-gap: 55px;
 }
 #stack #stack-list li{
     list-style: none;
@@ -218,7 +215,7 @@ footer {
 	padding: 150px 0 2% 0;
 	position: relative;
 	height: max-content;
-	margin-top: 290px;
+	margin-top: 50px;
 }
 footer #me-avatar {
     display: none;
@@ -264,4 +261,10 @@ footer ul#contact-footer li h2{
     font-size: 1rem;
     text-align: center;
     text-transform: uppercase;
+}
+@media (max-width: 780px){
+    footer {
+        padding: 92px 0 2% 0;
+        margin-top: 0px; 
+    }
 }
