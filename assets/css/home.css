@@ -77,6 +77,12 @@ header #menu li *{
     #home-hero .container{
         grid-template-columns: 1fr;
     }
+    #home-hero #text{
+        margin-top: 20%;
+    }
+    #home-hero #img{
+        display: none;
+    }
 }
 /* SOBRE */
 #sobre{
