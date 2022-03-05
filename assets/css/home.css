@@ -83,6 +83,9 @@ header #menu li *{
     font-size: 1.05rem;
     color: var(--texto-variante);
 }
+.light-mode:root #home-hero #text h2{
+    color: var(--texto-padrao);
+}
 @media (max-width: 780px) {
     #home-hero .container{
         grid-template-columns: 1fr;
@@ -131,7 +134,7 @@ header #menu li *{
 	border-image: var(--degrade-vertical);
 	border-image-slice: 0 0 0 10;
 	border-top: 0px;
-	border-bottom: 0px;
+	border-bottom: none;
     text-indent: 10px;
     text-align: justify;
 }
@@ -191,6 +194,7 @@ header #menu li *{
     font-size: 1rem;
     font-weight: lighter;
     margin-bottom: 20px;
+    color: var(--texto-padrao);
 }
 #projetos button {
 	font-size: 1.2rem;
@@ -204,12 +208,25 @@ header #menu li *{
 #projetos button a{
     color: var(--texto-variante);
 }
+
+.light-mode:root #projetos #project-list li{
+    box-shadow: 0px 0px 8px -3px var(--texto-padrao);
+	background-color: var(--background);
+	color: var(--texto-padrao);
+}
+.light-mode:root #projetos #project-list li h3{
+    color: var(--texto-padrao);
+}
 @media (max-width: 780px){
     #projetos #project-list{
         grid-template-columns: 1fr;
         grid-row-gap: 35px;
     }
 }
+
+
+
+
 /* STACK */
 #stack{
 	margin: 10% 0;
