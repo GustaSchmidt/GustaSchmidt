@@ -65,6 +65,8 @@ header #menu li *{
     background-image: var(--degrade-horizontal);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 #home-hero #text p{
     margin-top: 5px;
