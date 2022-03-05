@@ -166,6 +166,9 @@ header #menu li *{
 	display: block;
 	margin: 0 auto;
 } 
+#projetos button a{
+    color: var(--texto-variante);
+}
 @media (max-width: 780px){
     #projetos #project-list{
         grid-template-columns: 1fr;
