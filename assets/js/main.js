@@ -17,20 +17,6 @@ var configs = {
 };
 
 function loadProjects(){
-    var modelHTML = `
-        <li>
-            <img src="./assets/captura_de_tela.png" alt="">
-            <div class="conteiner-desc">
-                <h3>Titulo do projeto</h3>
-                <div class="project-tags">  
-                    <span>Lang</span>
-                </div>
-                <p class="desc">
-                    Lorem Ipsum
-                </p>
-            </div>
-        </li>
-    `;
     for (let index = 0; index < configs.projetos.length; index++) {
         const project = configs.projetos[index];
         
@@ -42,16 +28,52 @@ function loadProjects(){
             projectURL = configs.github_user+'/'+project.github;
         }
         //Request API github
-        var repoRequest = getAPI("https://api.github.com/repos/"+projectURL).then(function(repoResponse){
-            console.log(valor);
-            repo = valor;
+        getAPI("https://api.github.com/repos/"+projectURL).then(function(repoResponse){
+            if(repoResponse === "error"){
+                return false;
+            }
+            //Carregando modelo em DOM           
+            var projectsList = document.querySelector("#project-list");
+            var template = document.querySelector("#project-list template");
+            var projectDOM = document.createElement(template.attributes.element.nodeValue);
+            projectDOM.appendChild(document.importNode(template.content, true));
+
+            //Alterando valores do model
+            var img = projectDOM.getElementsByClassName('project-img')[0];
+            var title = projectDOM.getElementsByClassName('project-title')[0];
+            var descricao = projectDOM.getElementsByClassName('desc')[0];
+            var projectTags = projectDOM.getElementsByClassName('project-tags')[0];
+
+            title.textContent = repoResponse.name;
+            descricao.textContent = repoResponse.description;
+
+            //Adiciona tags de linguagens utilizadas no projeto
+            getAPI(repoResponse.languages_url).then(function(langs){
+                for (var key in langs){
+                    var lagnTag = document.createElement(projectTags.firstElementChild.nodeName);
+                    lagnTag.textContent = key;
+                    projectTags.appendChild(lagnTag);
+
+                    //Adicona na lista
+                    projectsList.appendChild(projectDOM);
+                }
+                projectTags.removeChild(projectTags.firstElementChild);
+
+                //Loader
+                var loader = document.querySelector('.lds-grid'); 
+                loader.style.display = "none";
+            });
         });
         
     }
 }
 async function getAPI(URL) {
-    const response = await fetch(URL, {method: 'GET'})
-    return await response.json();
+    const response = await fetch(URL, {method: 'GET'});
+    if(response.status === 200){
+        return await response.json();
+    }else{
+        return "error";
+    }
 }
 document.addEventListener("DOMContentLoaded", function(event) {
     // Definindo links do footer
@@ -79,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     //Carregar projetos
     loadProjects();
-
 });
 
 
