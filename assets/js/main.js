@@ -29,7 +29,7 @@ function loadProjects(){
         }
         //Request API github
         getAPI("https://api.github.com/repos/"+projectURL).then(function(repoResponse){
-            if(repoResponse === "error"){
+            if(repoResponse === false){
                 return false;
             }
             //Carregando modelo em DOM           
@@ -72,8 +72,29 @@ async function getAPI(URL) {
     if(response.status === 200){
         return await response.json();
     }else{
-        return "error";
+        return false;
     }
+}
+async function dateUpdate(){
+    getAPI("https://api.github.com/repos/GustaSchmidt/GustaSchmidt").then(function(thisRepo){
+        var date = new Date(thisRepo.updated_at);
+        var meses = [
+            'Janeiro',
+            'Fevereiro',
+            'Março',
+            'Abril',
+            'Maio',
+            'Junho',
+            'Julho',
+            'Agosto',
+            'Setembro',
+            'Outubro',
+            'Novembro',
+            'Dezembro'
+        ];
+        var msg = document.getElementById('update-msg');
+        msg.innerText = "Atualizado em "+meses[date.getMonth()]+" de "+date.getFullYear();
+    });
 }
 document.addEventListener("DOMContentLoaded", function(event) {
     // Definindo links do footer
@@ -101,6 +122,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     //Carregar projetos
     loadProjects();
+
+    //atualizar footer msg update
+    dateUpdate();
 });
 
 
