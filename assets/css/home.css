@@ -1,10 +1,17 @@
 @import url("./master.css");
-
+/* Geral */
 body{
     margin-top: var(--tamanho-header);
     background-color: var(--background);
 }
-
+.me-avatar{
+	border: double 4px transparent;
+	border-radius: 80px;
+	background-image: linear-gradient(white, white), var(--degrade-horizontal);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+}
+/* Header */
 header {
 	display: flex;
 	position: fixed;
@@ -68,6 +75,9 @@ header #menu li *{
 #home-hero #img img{
     text-align: right;
 }
+#home-hero #img .me-avatar {
+    display: none;
+}
 #home-hero button#contato{
     margin-top: 20px;
     font-size: 1.05rem;
@@ -81,7 +91,19 @@ header #menu li *{
         margin-top: 20%;
     }
     #home-hero #img{
+        grid-row: -1;
+    }
+    #home-hero #img .ilustra{
         display: none;
+    }
+    #home-hero #img .me-avatar {
+        width: 181px;
+        height: 181px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: block;
+        margin-top: 50px;
     }
 }
 /* SOBRE */
@@ -226,15 +248,12 @@ footer {
 	height: max-content;
 	margin-top: 50px;
 }
-footer #me-avatar {
-    display: none;
-    margin: 15px auto;    
+footer .me-avatar{
+	display: block; 
+	margin: 40px auto;
 	width: 120px;
-    border: double 4px transparent;
-    border-radius: 80px;
-    background-image: linear-gradient(white, white), var(--degrade-horizontal);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
+    height: 120px;
+	margin-top: 0;
 }
 footer ul li {
 	width: fit-content;
@@ -272,6 +291,9 @@ footer ul#contact-footer li h2{
     text-transform: uppercase;
 }
 @media (max-width: 780px){
+    footer .me-avatar{
+        display: none;
+    }
     footer {
         padding: 92px 0 2% 0;
         margin-top: 0px; 
