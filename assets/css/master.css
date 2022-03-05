@@ -34,7 +34,9 @@ h2{
     font-size: 1.8rem;
     color: var(--branco);
 }
-
+template{
+    display: none;
+}
 .container{
     --largura: 83vw;
     max-width: var(--largura);
