@@ -132,4 +132,59 @@ template{
       opacity: 0.5;
     }
 }
- 
+/* Theme switcher */
+#toggle_checkbox {
+    display: none;
+}
+  
+label {
+	position: relative;
+	display: block;
+	margin: 0;
+	cursor: pointer;
+	transform: scale(0.3);
+	float: left;
+	height: 100%;
+}
+  
+label:before{
+    top: 8px;
+    left: 8px;
+    width: 54px;
+    height: 54px;
+    border: 3px solid red;
+}
+  
+label:after{
+    top: 0;
+    right: 0;
+    width: 140px;
+    height: 70px;
+    border: 3px solid #00d5e4;
+}
+  
+label:before,
+label:after{
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    box-sizing: border-box;
+    transition: 0.5s ease top, 0.5s ease left, 0.5s ease right, 0.5s ease width, 0.5s ease height, 0.5s ease border-color;
+    left: 0;
+}
+
+#toggle_checkbox:checked + label:before {
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 70px;
+    border-color: purple;
+}
+  
+#toggle_checkbox:checked + label:after {
+    top: 8px;
+    right: 8px;
+    width: 54px;
+    height: 54px;
+    border-color: red;
+}

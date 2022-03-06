@@ -21,13 +21,6 @@ header {
 	width: 100%;
 	height: var(--tamanho-header);	
 }
-header #home-link{
-    float: left;
-    color: var(--texto-padrao);
-    text-decoration: none;
-    vertical-align: middle;
-    height: 100%;
-}
 header #menu{
     float: right;
     display: grid;
