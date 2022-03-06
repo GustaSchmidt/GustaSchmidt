@@ -1,7 +1,6 @@
 var Translation = {
     "pt-BR": {
         "header":{
-            "home-link": "home",
             "menu": {
                 "projetos-link": "projetos",
                 "contato-link": "contato" 
@@ -35,7 +34,6 @@ var Translation = {
 
     "en":{
         "header":{
-            "home-link": "home",
             "menu": {
                 "projetos-link": "Projects",
                 "contato-link": "Contact" 
