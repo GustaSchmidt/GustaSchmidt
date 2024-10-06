@@ -16,6 +16,10 @@ var configs = {
 
 };
 
+function loadPosts(){
+
+}
+
 function loadProjects(){
     for (let index = 0; index < configs.projetos.length; index++) {
         const project = configs.projetos[index];
@@ -120,8 +124,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     });
 
-    //Carregar projetos
-    loadProjects();
+    //Carregar projetos se for a home
+    if(window.location.pathname == "/"){
+        loadProjects();
+    }
 
     //atualizar footer msg update
     dateUpdate();
